@@ -47,6 +47,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-ruby/vim-ruby'
 Plug 'thoughtbot/vim-rspec'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Command-T
