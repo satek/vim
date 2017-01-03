@@ -45,6 +45,7 @@ Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-ruby/vim-ruby'
+Plug 'thoughtbot/vim-rspec'
 call plug#end()
 
 " Command-T
@@ -68,6 +69,12 @@ let g:NERDSpaceDelims = 1
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+"
+" RSpec.vim mappings
+map <Leader>d :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>"
 "
 " NeoComplete
 " Disable AutoComplPop.
