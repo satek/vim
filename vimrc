@@ -48,6 +48,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-ruby/vim-ruby'
 Plug 'thoughtbot/vim-rspec'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'jgdavey/tslime.vim'
 call plug#end()
 
 " Command-T
@@ -163,3 +164,9 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 "
+let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+" vim-rspec mappings
+map <Leader>d :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
