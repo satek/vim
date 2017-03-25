@@ -49,6 +49,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'thoughtbot/vim-rspec'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jgdavey/tslime.vim'
+Plug 'rhysd/vim-crystal'
 call plug#end()
 
 " Command-T
