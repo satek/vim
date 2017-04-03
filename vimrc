@@ -50,6 +50,9 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jgdavey/tslime.vim'
 Plug 'rhysd/vim-crystal'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+Plug 'klen/python-mode'
 call plug#end()
 
 " Command-T
@@ -171,3 +174,7 @@ map <Leader>d :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
