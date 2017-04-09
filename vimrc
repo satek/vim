@@ -53,6 +53,7 @@ Plug 'rhysd/vim-crystal'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 Plug 'klen/python-mode'
+Plug 'ElmCast/elm-vim'
 call plug#end()
 
 " Command-T
@@ -178,3 +179,6 @@ map <Leader>a :call RunAllSpecs()<CR>
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
+" for elm format
+let g:elm_format_autosave = 1
