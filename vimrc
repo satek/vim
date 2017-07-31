@@ -42,6 +42,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rvm'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-repeat'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -166,7 +167,7 @@ endif
 "
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 " vim-rspec mappings
-map <Leader>d :call RunCurrentSpecFile()<CR>
+map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
