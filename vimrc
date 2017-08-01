@@ -54,6 +54,9 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 Plug 'klen/python-mode'
 Plug 'ElmCast/elm-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'leshill/vim-json'
+Plug 'w0rp/ale'
 call plug#end()
 
 " Command-T
@@ -180,5 +183,17 @@ map <Leader>a :call RunAllSpecs()<CR>
 set foldmethod=indent
 set foldlevel=99
 
+" TSlime
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
+
 " for elm format
 let g:elm_format_autosave = 1
+
+let g:javascript_plugin_flow = 1
+
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
