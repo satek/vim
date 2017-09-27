@@ -2,8 +2,6 @@ filetype plugin on
 
 let mapleader=" "
 
-colorscheme Tomorrow-Night
-
 if !has('gui_running')
   set t_Co=256
 endif
@@ -58,7 +56,14 @@ Plug 'ElmCast/elm-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leshill/vim-json'
 Plug 'w0rp/ale'
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
+
+if has('gui_running')
+  colorscheme pyte
+endif
 
 " Command-T
 noremap <Leader>r :CommandTFlush<CR>
@@ -198,3 +203,11 @@ let g:javascript_plugin_flow = 1
 
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+
+
+if has("autocmd")
+    " If the filetype is Makefile then we need to use tabs
+    " So do not expand tabs into space.
+    autocmd FileType make set noexpandtab
+    autocmd FileType make set tabstop=4
+endif
