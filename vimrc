@@ -28,7 +28,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 call plug#begin()
-Plug 'wincent/command-t'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
@@ -61,6 +60,8 @@ Plug 'slashmili/alchemist.vim'
 Plug 'flazz/vim-colorschemes'
 call plug#end()
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 if has('gui_running')
   colorscheme pyte
 endif
@@ -70,7 +71,7 @@ noremap <Leader>r :CommandTFlush<CR>
 "
 " NERDTree
 map <Leader>p :NERDTreeFind<CR>
-map <C-p> :NERDTreeToggle<CR>
+map <Leader>o :NERDTreeToggle<CR>
 " open NerdTree on startup if no files were selected
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
