@@ -57,17 +57,19 @@ Plug 'leshill/vim-json'
 Plug 'w0rp/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-Plug 'flazz/vim-colorschemes'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-if has('gui_running')
-  colorscheme pyte
-endif
+" if has('gui_running')
+  " colorscheme pyte
+" endif
 
-" Command-T
-noremap <Leader>r :CommandTFlush<CR>
+set background=dark
+colorscheme PaperColor
+
 "
 " NERDTree
 map <Leader>p :NERDTreeFind<CR>
