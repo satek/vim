@@ -180,13 +180,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-"
-let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
-" vim-rspec mappings
-map <Leader>f :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
 
 " Enable folding
 set foldmethod=indent
