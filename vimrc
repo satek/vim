@@ -21,12 +21,6 @@ set showmatch
 set hidden
 set history=100
 
-" remove whitespaces on save
-autocmd BufWritePre * :%s/\s\+$//e
-
-" cancel search with Esc
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-
 call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -40,7 +34,8 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rvm'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
-Plug 'Shougo/neocomplete'
+Plug 'ecomba/vim-ruby-refactoring'
+" Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-ruby/vim-ruby'
@@ -51,26 +46,31 @@ Plug 'rhysd/vim-crystal'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 Plug 'klen/python-mode'
-Plug 'ElmCast/elm-vim'
+Plug 'integralist/vim-mypy'
+Plug 'plytophogy/vim-virtualenv'
 Plug 'pangloss/vim-javascript'
 Plug 'leshill/vim-json'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'derekwyatt/vim-scala'
 call plug#end()
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" if has('gui_running')
-  " colorscheme pyte
-" endif
 
 set background=dark
 colorscheme PaperColor
 
-"
+" ale
+" packloadall
+" silent! helptags ALL
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" remove whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" cancel search with Esc
+nnoremap <silent> <leader>q :nohl<CR><ESC>
+
 " NERDTree
 map <Leader>p :NERDTreeFind<CR>
 map <Leader>o :NERDTreeToggle<CR>
@@ -99,46 +99,46 @@ map <Leader>a :call RunAllSpecs()<CR>"
 "
 " NeoComplete
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+" let g:acp_enableAtStartup = 0
 " Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
-let g:neocomplete#enable_smart_case = 1
+" let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 " Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+" let g:neocomplete#sources#dictionary#dictionaries = {
+    " \ 'default' : '',
+    " \ 'vimshell' : $HOME.'/.vimshell_hist',
+    " \ 'scheme' : $HOME.'/.gosh_completions'
+        " \ }
 
 " Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" if !exists('g:neocomplete#keyword_patterns')
+    " let g:neocomplete#keyword_patterns = {}
+" endif
+" let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+" inoremap <expr><C-g>     neocomplete#undo_completion()
+" inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+  " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
   "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
+" endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
 "let g:neocomplete#enable_auto_select = 1
@@ -191,9 +191,6 @@ let g:tslime_always_current_window = 1
 vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars
-
-" for elm format
-let g:elm_format_autosave = 1
 
 let g:javascript_plugin_flow = 1
 
