@@ -38,6 +38,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 " Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
 Plug 'vim-ruby/vim-ruby'
 Plug 'thoughtbot/vim-rspec'
 Plug 'christoomey/vim-tmux-navigator'
@@ -56,6 +57,8 @@ Plug 'slashmili/alchemist.vim'
 Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
+let g:neosnippet#enable_snipmate_compatibility = 1
+
 set background=dark
 colorscheme PaperColor
 
@@ -64,6 +67,7 @@ colorscheme PaperColor
 " silent! helptags ALL
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+map <Leader>b :CtrlPBuffer<CR>
 
 " remove whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -96,6 +100,9 @@ map <Leader>d :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>"
+
+
+
 "
 " NeoComplete
 " Disable AutoComplPop.
