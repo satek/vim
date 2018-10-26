@@ -76,6 +76,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 nnoremap <silent> <leader>q :nohl<CR><ESC>
 
 " NERDTree
+let g:NERDTreeWinSize=50
 map <Leader>p :NERDTreeFind<CR>
 map <Leader>o :NERDTreeToggle<CR>
 " open NerdTree on startup if no files were selected
@@ -211,3 +212,6 @@ if has("autocmd")
     autocmd FileType make set noexpandtab
     autocmd FileType make set tabstop=4
 endif
+
+" search selection
+vnoremap // y/<C-R>"<CR>
