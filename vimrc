@@ -8,6 +8,7 @@ endif
 
 " set lines=35 columns=150
 set colorcolumn=81
+set encoding=UTF-8
 
 filetype indent on
 set nowrap
@@ -204,10 +205,13 @@ let g:javascript_plugin_flow = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 
-
 if has("autocmd")
     " If the filetype is Makefile then we need to use tabs
     " So do not expand tabs into space.
     autocmd FileType make set noexpandtab
     autocmd FileType make set tabstop=4
-endif
+    augroup rubex
+      au!
+      autocmd BufNewFile,BufRead *.rubex set syntax=ruby
+    augroup END
+  endif
