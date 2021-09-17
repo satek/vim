@@ -1,9 +1,9 @@
 " Requires The Silver Searcher, to install `apt-get install silversearcher-ag`
 
 " Mapping selecting mappings
-nmap <leader>f :Files<CR>
+nmap <leader>m :Files<CR>
 nmap <leader>b :Buffers<CR>
-nmap <leader>s :Ag<CR>
+nmap <leader>n :Ag<CR>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)

@@ -1,6 +1,5 @@
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rvm'
 Plug 'tpope/vim-dispatch'

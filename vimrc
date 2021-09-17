@@ -8,3 +8,5 @@ call plug#begin()
 call plug#end()
 
 source ~/.vim/common-settings.vimrc
+source ~/.vim/coc-config.vimrc
+source ~/.vim/coc-snippets.vimrc
