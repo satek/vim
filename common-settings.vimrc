@@ -38,7 +38,7 @@ nnoremap <silent> <leader>q :nohl<CR><ESC>
 " NERDTree
 let g:NERDTreeWinSize=50
 map <Leader>' :NERDTreeFind<CR>
-map <Leader>\ :NERDTreeToggle<CR>
+map <Leader># :NERDTreeToggle<CR>
 " open NerdTree on startup if no files were selected
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
