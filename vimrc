@@ -10,3 +10,6 @@ call plug#end()
 source ~/.vim/common-settings.vimrc
 source ~/.vim/coc-config.vimrc
 source ~/.vim/coc-snippets.vimrc
+
+set visualbell
+set t_vb=
