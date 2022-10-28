@@ -26,7 +26,7 @@ set pastetoggle=<F2>
 
 nmap <Leader>w :w<CR>
 
-set background=dark
+set background=light
 colorscheme PaperColor
 
 " remove whitespaces on save
